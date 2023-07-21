@@ -8,9 +8,9 @@ export const makeUser = (user?: {
   password?: string;
 }): User => {
   return {
-    id: user?.id ?? faker.datatype.uuid(),
+    id: user?.id ?? faker.string.uuid(),
     email: user?.email ?? faker.internet.email(),
-    name: user?.name ?? faker.name.firstName(),
+    name: user?.name ?? faker.person.firstName(),
     password: user?.password ?? faker.internet.password(),
   };
 };
