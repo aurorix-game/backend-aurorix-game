@@ -30,7 +30,7 @@ describe(SignupController, () => {
 
     expect(response).toEqual({
       statusCode: Http.StatusCode.CREATED,
-      data: { user, accessToken: makeBearerAuthToken() },
+      data: { user, access_token: makeBearerAuthToken() },
     });
   });
 

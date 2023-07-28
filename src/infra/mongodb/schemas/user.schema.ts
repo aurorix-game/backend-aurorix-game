@@ -9,7 +9,7 @@ export const userSchema = new Schema<User>({
     default: () => uuid(),
     index: 'hashed',
   },
-  name: { type: 'string', required: true },
+  nickname: { type: 'string', required: true },
   email: { type: 'string', required: true, unique: true },
   password: { type: 'string', required: true, select: false },
 });

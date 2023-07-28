@@ -2,7 +2,7 @@ export namespace Http {
   export type Request = {
     user: {
       id: string;
-      name: string;
+      nickname: string;
       email: string;
     };
     body: Record<string, string>;

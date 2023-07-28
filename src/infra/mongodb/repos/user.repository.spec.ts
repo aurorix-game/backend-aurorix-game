@@ -15,7 +15,7 @@ describe(UserRepository, () => {
 
   describe('Create User', () => {
     it('should be return user created', async () => {
-      const mock = makeUser({ name: 'Luke' });
+      const mock = makeUser({ nickname: 'Luke' });
       databaseAdapter.create.mockResolvedValueOnce(mock);
 
       const user = await sut.create(mock);
@@ -26,7 +26,7 @@ describe(UserRepository, () => {
     });
 
     it('should be error in user created', async () => {
-      const mock = makeUser({ name: 'Luke' });
+      const mock = makeUser({ nickname: 'Luke' });
       databaseAdapter.create.mockRejectedValueOnce(new Error('generic error'));
 
       const promise = sut.create(mock);

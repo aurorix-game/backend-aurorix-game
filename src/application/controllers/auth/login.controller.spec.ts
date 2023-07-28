@@ -35,7 +35,7 @@ describe(LoginController, () => {
 
     expect(response).toEqual({
       statusCode: Http.StatusCode.OK,
-      data: { accessToken: makeBearerAuthToken() },
+      data: { access_token: makeBearerAuthToken() },
     });
   });
 

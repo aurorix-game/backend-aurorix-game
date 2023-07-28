@@ -14,20 +14,20 @@ export class SignupController implements ControllerContract {
   ) {}
 
   async handle(request: Http.Request): Promise<Http.Response> {
-    const { email, name, password } = request.body;
+    const { email, nickname, password } = request.body;
 
     try {
       const user = await this.userCreateService.perform({
         email,
-        name,
+        nickname,
         password,
       });
 
-      const accessToken = await this.tokenService.generate(user.email);
+      const access_token = await this.tokenService.generate(user.email);
 
       return {
         statusCode: Http.StatusCode.CREATED,
-        data: { user, accessToken },
+        data: { user, access_token },
       };
     } catch (e: any) {
       throw new AppError({

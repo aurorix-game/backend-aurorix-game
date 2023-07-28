@@ -4,7 +4,7 @@ import { Http } from '@main/interfaces';
 import * as Yup from 'yup';
 
 const body = Yup.object().shape({
-  name: Yup.string().required(),
+  nickname: Yup.string().required(),
   email: Yup.string().lowercase().email().required(),
   password: Yup.string().min(8).max(32).required(),
 });

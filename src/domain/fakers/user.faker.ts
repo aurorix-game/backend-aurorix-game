@@ -3,14 +3,14 @@ import { faker } from '@faker-js/faker';
 
 export const makeUser = (user?: {
   id?: string;
-  name?: string;
+  nickname?: string;
   email?: string;
   password?: string;
 }): User => {
   return {
     id: user?.id ?? faker.string.uuid(),
     email: user?.email ?? faker.internet.email(),
-    name: user?.name ?? faker.person.firstName(),
+    nickname: user?.nickname ?? faker.person.firstName(),
     password: user?.password ?? faker.internet.password(),
   };
 };

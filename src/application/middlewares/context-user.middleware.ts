@@ -24,7 +24,7 @@ export class ContextUserMiddleware implements MiddlewareContract {
       request.user = {
         id: user.id as string,
         email: user.email,
-        name: user.name,
+        nickname: user.nickname,
       };
     } catch (e: any) {
       throw new AppError({

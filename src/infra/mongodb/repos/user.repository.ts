@@ -13,8 +13,8 @@ export class UserRepository implements RepositoryContract<User> {
 
   async create(data: User): Promise<User> {
     try {
-      const { id, email, name } = await this.databaseAdapter.create(data);
-      return { id, email, name };
+      const { id, email, nickname } = await this.databaseAdapter.create(data);
+      return { id, email, nickname };
     } catch (e: any) {
       if (e.code === 11000) throw new Error('Email already in use');
       throw e;
@@ -28,7 +28,7 @@ export class UserRepository implements RepositoryContract<User> {
 
     return {
       id: user.id,
-      name: user.name,
+      nickname: user.nickname,
       email: user.email,
       password: user.password,
     };
@@ -36,8 +36,8 @@ export class UserRepository implements RepositoryContract<User> {
 
   async list(params: Repository.ParamsList = {}): Promise<User[]> {
     const data = await this.databaseAdapter.list(params);
-    return data.map(({ id, email, name, password }) => {
-      return { id, email, name, password };
+    return data.map(({ id, email, nickname, password }) => {
+      return { id, email, nickname, password };
     });
   }
 }
