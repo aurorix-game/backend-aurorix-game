@@ -14,7 +14,9 @@ export class TokenAdapter {
 
   async verify(token: string): Promise<boolean> {
     try {
-      return jwt.verify(token, env.secrets.jwt) !== null;
+      return (
+        jwt.verify(token, env.secrets.jwt, { ignoreExpiration: false }) !== null
+      );
     } catch {
       throw new Error('Invalid token');
     }
