@@ -4,6 +4,7 @@ import { User } from '@domain/models';
 export interface CreateUserUseCase {
   perform(user: User): Promise<User>;
 }
+
 export interface GetUserUseCase {
   perform(params: Repository.ParamsGet): Promise<User>;
 }

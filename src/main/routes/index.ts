@@ -2,6 +2,7 @@ import { expressAdapter } from '@infra/adapters';
 import { logger } from '@main/config/logger';
 import { ResourceMapper } from '@main/interfaces';
 import { authRoutes } from '@main/routes/auth.routes';
+import { chooseRoutes } from '@main/routes/choose.routes';
 import { healthCheckRoutes } from '@main/routes/health-check.routes';
 import Table from 'cli-table';
 import { Express, Router } from 'express';
@@ -17,7 +18,11 @@ function logRequest(req: { id: string; method: string; path: string }) {
 }
 
 export const mappingRoutes = (app: Express): void => {
-  const resources: ResourceMapper[] = [...authRoutes, ...healthCheckRoutes];
+  const resources: ResourceMapper[] = [
+    ...authRoutes,
+    ...chooseRoutes,
+    ...healthCheckRoutes,
+  ];
   const router = Router();
 
   const table = new Table({
