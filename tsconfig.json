@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDirs": ["src"],
+    "rootDirs": [
+      "src"
+    ],
     "target": "es2021",
     "sourceMap": true,
     "skipLibCheck": true,
@@ -12,14 +14,26 @@
     "removeComments": true,
     "baseUrl": "src",
     "paths": {
-      "@application/*": ["application/*"],
-      "@domain/*": ["domain/*"],
-      "@infra/*": ["infra/*"],
-      "@main/*": ["main/*"]
+      "@application/*": [
+        "application/*"
+      ],
+      "@domain/*": [
+        "domain/*"
+      ],
+      "@infra/*": [
+        "infra/*"
+      ],
+      "@main/*": [
+        "main/*"
+      ]
     },
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
