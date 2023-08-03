@@ -3,8 +3,8 @@ import { TypeValues } from '@domain/models';
 export namespace Character {
   export type Sprite = {
     url: string;
-    columns: string;
-    rows: string;
+    columns: number;
+    rows: number;
   };
 
   export enum TypeAttributes {
@@ -15,7 +15,6 @@ export namespace Character {
 
   export type Attribute = {
     label: string;
-    type: number;
     type_value: TypeValues;
     value: number;
     style: {
@@ -25,6 +24,7 @@ export namespace Character {
   };
 
   export type Model = {
+    alias_name: string;
     sprite: Sprite;
     attributes: Attribute[];
   };
