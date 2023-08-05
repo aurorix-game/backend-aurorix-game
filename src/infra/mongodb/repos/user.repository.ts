@@ -16,7 +16,7 @@ export class UserRepository implements RepositoryContract<User> {
       const { id, email, nickname } = await this.databaseAdapter.create(data);
       return { id, email, nickname };
     } catch (e: any) {
-      if (e.code === 11000) throw new Error('Email already in use');
+      if (e.code === 11000) throw new Error('Email or nickname already in use');
       throw e;
     }
   }

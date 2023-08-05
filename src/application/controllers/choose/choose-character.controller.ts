@@ -13,7 +13,8 @@ export class ChooseCharacterController implements ControllerContract {
 
   async handle(): Promise<Http.Response> {
     try {
-      const characters = this.getInicialCharacterService.perform();
+      const characters = await this.getInicialCharacterService.perform({});
+
       return {
         statusCode: Http.StatusCode.OK,
         data: characters,

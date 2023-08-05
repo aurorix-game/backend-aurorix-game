@@ -1,0 +1,49 @@
+[
+  {
+    "id": "e862d225-06cc-4c84-9bc1-cbb1d324474a",
+    "alias_name": "blueprint-fire",
+    "sprite": {
+      "url": "https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/fire-char-3x4.png",
+      "columns": 3,
+      "rows": 2
+    },
+    "attributes": [
+      {
+        "label": "Mopy Capture",
+        "type_value": "percentage",
+        "value": 500,
+        "style": {
+          "color": "#FF52A0",
+          "icon": "https://aurorix.s3.amazonaws.com/sprites/icons/capture-mopy.png"
+        }
+      },
+      {
+        "label": "Expertise",
+        "type_value": "percentage",
+        "value": 700,
+        "style": {
+          "color": "#F8C43E",
+          "icon": "https://aurorix.s3.amazonaws.com/sprites/icons/expertise.png"
+        }
+      },
+      {
+        "label": "Element Tunning - Fire",
+        "type_value": "percentage",
+        "value": 5500,
+        "style": {
+          "color": "#FF6536",
+          "icon": "https://aurorix.s3.amazonaws.com/sprites/icons/fire.png"
+        }
+      },
+      {
+        "label": "Element Tunning - Grass",
+        "type_value": "percentage",
+        "value": 700,
+        "style": {
+          "color": "#69CD42",
+          "icon": "https://aurorix.s3.amazonaws.com/sprites/icons/grass.png"
+        }
+      }
+    ]
+  }
+]
