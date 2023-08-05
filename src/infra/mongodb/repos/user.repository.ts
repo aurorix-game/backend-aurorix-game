@@ -13,8 +13,7 @@ export class UserRepository implements RepositoryContract<User> {
 
   async create(data: User): Promise<User> {
     try {
-      const { id, email, nickname } = await this.databaseAdapter.create(data);
-      return { id, email, nickname };
+      return await this.databaseAdapter.create(data);
     } catch (e: any) {
       if (e.code === 11000) throw new Error('Email or nickname already in use');
       throw e;
@@ -26,19 +25,11 @@ export class UserRepository implements RepositoryContract<User> {
 
     if (!user) throw new Error('User not found');
 
-    return {
-      id: user.id,
-      nickname: user.nickname,
-      email: user.email,
-      password: user.password,
-    };
+    return user;
   }
 
   async list(params: Repository.ParamsList = {}): Promise<User[]> {
-    const data = await this.databaseAdapter.list(params);
-    return data.map(({ id, email, nickname, password }) => {
-      return { id, email, nickname, password };
-    });
+    return await this.databaseAdapter.list(params);
   }
 }
 
