@@ -24,7 +24,6 @@ export namespace Character {
   };
 
   export type Model = {
-    _id?: string;
     id: string;
     alias_name: string;
     sprite: Sprite;

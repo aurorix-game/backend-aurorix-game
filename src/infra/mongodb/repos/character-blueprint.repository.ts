@@ -20,6 +20,10 @@ export class CharacterBlueprintRepository
       return blueprint;
     });
   }
+
+  async create(data: Character.Model): Promise<Character.Model> {
+    return await this.databaseAdapter.create(data);
+  }
 }
 
 /* istanbul ignore next */
