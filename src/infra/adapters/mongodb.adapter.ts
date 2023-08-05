@@ -32,6 +32,13 @@ export class MongodbAdapter<T> {
     return document;
   }
 
+  async createBulk(data: T[]): Promise<void> {
+    await this.openConnect();
+
+    const Document = this.getInstance();
+    await Document.collection.insertMany(data as any);
+  }
+
   async get(params: Repository.ParamsGet): Promise<T> {
     await this.openConnect();
 

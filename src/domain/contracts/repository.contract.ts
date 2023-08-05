@@ -23,6 +23,7 @@ export namespace Repository {
 }
 export interface RepositoryContract<T> {
   create?: (data: T) => Promise<T>;
+  createBulk?: (data: T[]) => Promise<void>;
   get?: (params: Repository.ParamsGet) => Promise<T>;
   list?: (params: Repository.ParamsList) => Promise<T[]>;
   count?: (params: Repository.ParamsList) => Promise<number>;

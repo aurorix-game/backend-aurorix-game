@@ -15,10 +15,8 @@ export class GetInicialCharactersService
     const characters = await this.characterBlueprintRepository.list(params);
 
     if (characters.length !== charactersBlueprintsSeed.length) {
-      await Promise.all(
-        charactersBlueprintsSeed.map(async (blueprint) => {
-          await this.characterBlueprintRepository.create(blueprint);
-        }),
+      await this.characterBlueprintRepository.createBulk(
+        charactersBlueprintsSeed,
       );
       return await this.characterBlueprintRepository.list(params);
     }

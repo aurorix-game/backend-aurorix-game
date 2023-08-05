@@ -95,4 +95,51 @@ export const charactersBlueprintsSeed: Character.Model[] = [
       },
     ],
   },
+  {
+    id: '196eebb6-af62-4449-abd7-c02d1d35ddaa',
+    alias_name: 'blueprint-shadow',
+    sprite: {
+      url: 'https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/shadow-char-3x4.png',
+      columns: 3,
+      rows: 2,
+    },
+    attributes: [
+      {
+        label: 'Mopy Capture',
+        type_value: TypeValues.PERCENTAGE,
+        value: 600,
+        style: {
+          color: '#FF52A0',
+          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/capture-mopy.png',
+        },
+      },
+      {
+        label: 'Expertise',
+        type_value: TypeValues.PERCENTAGE,
+        value: 400,
+        style: {
+          color: '#F8C43E',
+          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/expertise.png',
+        },
+      },
+      {
+        label: 'Element Tunning - Shadow',
+        type_value: TypeValues.PERCENTAGE,
+        value: 3400,
+        style: {
+          color: '#8048FF',
+          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/shadow.png',
+        },
+      },
+      {
+        label: 'Element Tunning - Grass',
+        type_value: TypeValues.PERCENTAGE,
+        value: 2400,
+        style: {
+          color: '#69CD42',
+          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/grass.png',
+        },
+      },
+    ],
+  },
 ];

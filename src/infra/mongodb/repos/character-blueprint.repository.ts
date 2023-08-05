@@ -21,8 +21,8 @@ export class CharacterBlueprintRepository
     });
   }
 
-  async create(data: Character.Model): Promise<Character.Model> {
-    return await this.databaseAdapter.create(data);
+  async createBulk(data: Character.Model[]): Promise<void> {
+    await this.databaseAdapter.createBulk(data);
   }
 }
 
