@@ -1,6 +1,6 @@
 import { Repository } from '@domain/contracts';
 import { env } from '@main/config/env';
-import { connect, disconnect, Model, model, Schema } from 'mongoose';
+import { connect, Model, model, Schema } from 'mongoose';
 
 export class MongodbAdapter<T> {
   private schema: Schema<T>;
@@ -18,10 +18,6 @@ export class MongodbAdapter<T> {
     });
   }
 
-  private async closeConnection(): Promise<void> {
-    await disconnect();
-  }
-
   private getInstance(): Model<T> {
     return model<T>(this.tableName, this.schema);
   }
@@ -33,8 +29,6 @@ export class MongodbAdapter<T> {
     const document = new Document(data);
     await document.save();
 
-    await this.closeConnection();
-
     return document;
   }
 
@@ -43,8 +37,6 @@ export class MongodbAdapter<T> {
 
     const Document = this.getInstance();
     const document = await Document.findOne(params.filter, params.fields);
-
-    await this.closeConnection();
 
     return document as T;
   }
@@ -57,8 +49,6 @@ export class MongodbAdapter<T> {
       ...params.paginate,
     });
 
-    await this.closeConnection();
-
     return documents;
   }
 
@@ -67,8 +57,6 @@ export class MongodbAdapter<T> {
 
     const Document = this.getInstance();
     await Document.updateOne(filter, data as Record<string, unknown>);
-
-    await this.closeConnection();
 
     return await this.get(filter);
   }
@@ -79,8 +67,6 @@ export class MongodbAdapter<T> {
     const Document = this.getInstance();
     const count = await Document.countDocuments(filter);
 
-    await this.closeConnection();
-
     return count;
   }
 
@@ -89,8 +75,6 @@ export class MongodbAdapter<T> {
 
     const Document = this.getInstance();
     const result = await Document.deleteOne(filter);
-
-    await this.closeConnection();
 
     return result.deletedCount === 1;
   }
