@@ -22,7 +22,11 @@ export class LoginController implements ControllerContract {
         headers.authorization,
       );
 
-      const access_token = await this.tokenService.generate(user.email);
+      const access_token = await this.tokenService.generate({
+        id: user.id as string,
+        nickname: user.nickname,
+        email: user.email,
+      });
 
       return {
         statusCode: Http.StatusCode.OK,

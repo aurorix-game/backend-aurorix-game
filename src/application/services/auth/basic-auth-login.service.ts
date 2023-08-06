@@ -17,7 +17,7 @@ export class BasicAuthLoginService implements BasicAuthLoginUseCase {
 
     const user = await this.userRepository.get({
       filter: { email },
-      fields: ['email', 'password'],
+      fields: ['id', 'nickname', 'email', 'password'],
     });
 
     const valid = await this.bcryptService.compare(

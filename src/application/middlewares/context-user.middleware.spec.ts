@@ -15,8 +15,7 @@ describe(ContextUserMiddleware, () => {
 
   beforeEach(() => {
     tokenService = mock<TokenService>();
-    getUserService = mock<GetUserService>();
-    sut = new ContextUserMiddleware(tokenService, getUserService);
+    sut = new ContextUserMiddleware(tokenService);
 
     request = makeRequest();
     request.headers = { authorization: fakeToken };

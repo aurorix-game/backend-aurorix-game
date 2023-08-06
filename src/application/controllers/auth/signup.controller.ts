@@ -23,7 +23,11 @@ export class SignupController implements ControllerContract {
         password,
       });
 
-      const access_token = await this.tokenService.generate(user.email);
+      const access_token = await this.tokenService.generate({
+        id: user.id as string,
+        nickname,
+        email,
+      });
 
       return {
         statusCode: Http.StatusCode.CREATED,

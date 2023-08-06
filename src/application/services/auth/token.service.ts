@@ -1,11 +1,12 @@
+import { PayloadToken } from '@domain/contracts';
 import { TokenUseCase } from '@domain/use-cases';
 import { makeTokenAdapter, TokenAdapter } from '@infra/adapters';
 
 export class TokenService implements TokenUseCase {
   constructor(private readonly tokenAdapter: TokenAdapter) {}
 
-  async generate(email: string): Promise<string> {
-    return await this.tokenAdapter.encode({ email });
+  async generate(params: PayloadToken): Promise<string> {
+    return await this.tokenAdapter.encode(params);
   }
 
   async decode(token: string): Promise<Record<any, any>> {
