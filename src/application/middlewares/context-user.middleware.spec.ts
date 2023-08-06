@@ -1,14 +1,12 @@
 import { ContextUserMiddleware } from '@application/middlewares';
 import { TokenService } from '@application/services/auth';
-import { GetUserService } from '@application/services/user';
-import { makeRequest, makeUser } from '@domain/fakers';
+import { makeRequest } from '@domain/fakers';
 import { Http } from '@main/interfaces';
 import { mock, MockProxy } from 'jest-mock-extended';
 
 describe(ContextUserMiddleware, () => {
   let sut: ContextUserMiddleware;
   let tokenService: MockProxy<TokenService>;
-  let getUserService: MockProxy<GetUserService>;
 
   let request: Http.Request;
   const fakeToken = 'Bearer any_token';
@@ -26,14 +24,10 @@ describe(ContextUserMiddleware, () => {
 
     tokenService.verify.mockResolvedValueOnce(true);
     tokenService.decode.mockResolvedValueOnce({ email });
-    getUserService.perform.mockResolvedValueOnce(makeUser({ email }));
 
     await sut.handle(request);
 
     expect(tokenService.decode).toHaveBeenCalledWith('any_token');
-    expect(getUserService.perform).toHaveBeenCalledWith({
-      filter: { email },
-    });
   });
 
   it('should return in get user context request', async () => {
@@ -41,7 +35,6 @@ describe(ContextUserMiddleware, () => {
 
     tokenService.verify.mockResolvedValueOnce(true);
     tokenService.decode.mockResolvedValueOnce({ email });
-    getUserService.perform.mockRejectedValueOnce(new Error('User not found'));
 
     await sut.handle(request).catch((e) => {
       expect(e).toEqual({
