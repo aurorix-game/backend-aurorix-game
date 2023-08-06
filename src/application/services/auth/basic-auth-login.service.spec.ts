@@ -25,7 +25,7 @@ describe(BasicAuthLoginService, () => {
     await sut.perform(fakeToken);
 
     expect(userRepository.get).toHaveBeenCalledWith({
-      fields: ['email', 'password'],
+      fields: ['id', 'nickname', 'email', 'password'],
       filter: { email },
     });
   });
