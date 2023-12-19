@@ -7,7 +7,7 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     sprite: {
       url: 'https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/fire-char-3x4.png',
       columns: 3,
-      rows: 2,
+      rows: 4,
     },
     attributes: [
       {
@@ -54,7 +54,7 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     sprite: {
       url: 'https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/water-char-3x4.png',
       columns: 3,
-      rows: 2,
+      rows: 4,
     },
     attributes: [
       {
@@ -101,7 +101,7 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     sprite: {
       url: 'https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/shadow-char-3x4.png',
       columns: 3,
-      rows: 2,
+      rows: 4,
     },
     attributes: [
       {
