@@ -43,7 +43,10 @@ export class MongodbAdapter<T> {
     await this.openConnect();
 
     const Document = this.getInstance();
-    const document = await Document.findOne(params.filter, params.fields);
+    const document = await Document.findOne(
+      params.filter,
+      params.fields ? params.fields : { _id: 0 },
+    );
 
     return document as T;
   }

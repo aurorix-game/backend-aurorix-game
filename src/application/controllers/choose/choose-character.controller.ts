@@ -13,7 +13,6 @@ export class ChooseCharacterController implements ControllerContract {
 
   async handle(request: Http.Request): Promise<Http.Response> {
     try {
-      // TODO: Tratar caso quando já tiver pelo menos um character
       const userCharacter = await this.chooseCharactersService.perform({
         user_id: request.user.id,
         alias_name_blueprint: request.body.alias_name_blueprint,

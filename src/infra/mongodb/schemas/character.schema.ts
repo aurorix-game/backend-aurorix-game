@@ -45,9 +45,11 @@ characterSchema.set('toJSON', {
   virtuals: true,
   transform(_doc: HydratedDocument<unknown>, ret: Record<string, any>) {
     delete ret._id;
+    delete ret.sprite._id;
 
     (ret as Character.Model)?.attributes?.forEach((att: any) => {
       delete att._id;
+      delete att.style._id;
     });
   },
 });
