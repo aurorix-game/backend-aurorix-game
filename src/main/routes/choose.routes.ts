@@ -1,6 +1,6 @@
 import {
-  makeChooseCharacterController,
   makeChooseMopyController,
+  makeGetInitialCharacterController,
 } from '@application/controllers/choose';
 import {
   makeAuthMiddleware,
@@ -12,7 +12,7 @@ const chooseRoutes: ResourceMapper[] = [
   {
     endPoint: '/choose/character/initial',
     method: Http.Methods.get,
-    controller: makeChooseCharacterController(),
+    controller: makeGetInitialCharacterController(),
     middlewares: [makeAuthMiddleware(), makeContextUserMiddleware()],
   },
   {

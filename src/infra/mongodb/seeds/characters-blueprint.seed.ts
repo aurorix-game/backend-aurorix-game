@@ -1,3 +1,4 @@
+import { CHARACTER_ATTRIBUTE_ICONS } from '@domain/enums';
 import { Character, TypeValues } from '@domain/models';
 
 export const charactersBlueprintsSeed: Character.Model[] = [
@@ -11,39 +12,49 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     },
     attributes: [
       {
-        label: 'Mopy Capture',
+        label: Character.TypeAttributesLabel.MOPY_CAPTURE,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.MOPY_CAPTURE,
         value: 500,
         style: {
           color: '#FF52A0',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/capture-mopy.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.MOPY_CAPTURE
+          ],
         },
       },
       {
-        label: 'Expertise',
+        label: Character.TypeAttributesLabel.EXPERTISE,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.EXPERTISE,
         value: 700,
         style: {
           color: '#F8C43E',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/expertise.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[Character.TypeAttributes.EXPERTISE],
         },
       },
       {
-        label: 'Element Tunning - Fire',
+        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_FIRE,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.ELEMENT_TUNNING_FIRE,
         value: 5500,
         style: {
           color: '#FF6536',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/fire.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.ELEMENT_TUNNING_FIRE
+          ],
         },
       },
       {
-        label: 'Element Tunning - Grass',
+        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_GRASS,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.ELEMENT_TUNNING_GRASS,
         value: 700,
         style: {
           color: '#69CD42',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/grass.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.ELEMENT_TUNNING_GRASS
+          ],
         },
       },
     ],
@@ -58,39 +69,49 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     },
     attributes: [
       {
-        label: 'Mopy Capture',
+        label: Character.TypeAttributesLabel.MOPY_CAPTURE,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.MOPY_CAPTURE,
         value: 300,
         style: {
           color: '#FF52A0',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/capture-mopy.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.MOPY_CAPTURE
+          ],
         },
       },
       {
-        label: 'Expertise',
+        label: Character.TypeAttributesLabel.EXPERTISE,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.EXPERTISE,
         value: 800,
         style: {
           color: '#F8C43E',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/expertise.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[Character.TypeAttributes.EXPERTISE],
         },
       },
       {
-        label: 'Element Tunning - Water',
+        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_WATER,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.ELEMENT_TUNNING_WATER,
         value: 6600,
         style: {
           color: '#57A4FF',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/water.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.ELEMENT_TUNNING_WATER
+          ],
         },
       },
       {
-        label: 'Element Tunning - Grass',
+        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_GRASS,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.ELEMENT_TUNNING_GRASS,
         value: 400,
         style: {
           color: '#69CD42',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/grass.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.ELEMENT_TUNNING_GRASS
+          ],
         },
       },
     ],
@@ -105,39 +126,49 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     },
     attributes: [
       {
-        label: 'Mopy Capture',
+        label: Character.TypeAttributesLabel.MOPY_CAPTURE,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.MOPY_CAPTURE,
         value: 600,
         style: {
           color: '#FF52A0',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/capture-mopy.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.MOPY_CAPTURE
+          ],
         },
       },
       {
-        label: 'Expertise',
+        label: Character.TypeAttributesLabel.EXPERTISE,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.EXPERTISE,
         value: 400,
         style: {
           color: '#F8C43E',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/expertise.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[Character.TypeAttributes.EXPERTISE],
         },
       },
       {
-        label: 'Element Tunning - Shadow',
+        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_SHADOW,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.ELEMENT_TUNNING_SHADOW,
         value: 3400,
         style: {
           color: '#8048FF',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/shadow.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.ELEMENT_TUNNING_SHADOW
+          ],
         },
       },
       {
-        label: 'Element Tunning - Grass',
+        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_GRASS,
         type_value: TypeValues.PERCENTAGE,
+        type: Character.TypeAttributes.ELEMENT_TUNNING_GRASS,
         value: 2400,
         style: {
           color: '#69CD42',
-          icon: 'https://aurorix.s3.amazonaws.com/sprites/icons/grass.png',
+          icon: CHARACTER_ATTRIBUTE_ICONS[
+            Character.TypeAttributes.ELEMENT_TUNNING_GRASS
+          ],
         },
       },
     ],

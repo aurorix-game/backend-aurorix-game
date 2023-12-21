@@ -52,9 +52,13 @@ export class MongodbAdapter<T> {
     await this.openConnect();
 
     const Document = this.getInstance();
-    const documents = await Document.find(params.filter, params.fields, {
-      ...params.paginate,
-    });
+    const documents = await Document.find(
+      params.filter,
+      params.fields ? params.fields : { _id: 0 },
+      {
+        ...params.paginate,
+      },
+    );
 
     return documents;
   }

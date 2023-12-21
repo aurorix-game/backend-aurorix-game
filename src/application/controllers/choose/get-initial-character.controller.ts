@@ -6,7 +6,7 @@ import {
 import { ControllerContract } from '@domain/contracts';
 import { Http } from '@main/interfaces';
 
-export class ChooseCharacterController implements ControllerContract {
+export class GetInitialCharacterController implements ControllerContract {
   constructor(
     private readonly getInicialCharacterService: GetInicialCharactersService,
   ) {}
@@ -31,6 +31,7 @@ export class ChooseCharacterController implements ControllerContract {
 }
 
 /* istanbul ignore next */
-export const makeChooseCharacterController = (): ChooseCharacterController => {
-  return new ChooseCharacterController(makeGetInicialCharactersService());
-};
+export const makeGetInitialCharacterController =
+  (): GetInitialCharacterController => {
+    return new GetInitialCharacterController(makeGetInicialCharactersService());
+  };
