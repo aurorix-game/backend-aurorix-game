@@ -1,16 +1,21 @@
-import { Repository, RepositoryContract } from '@domain/contracts';
+import { Repository } from '@domain/contracts';
+import { ICharacterBlueprintRepository } from '@domain/interfaces';
 import { Character } from '@domain/models';
 import { MongodbAdapter } from '@infra/adapters';
-import { characterBlueprintSchema } from '@infra/mongodb/schemas';
+import { characterSchema } from '@infra/mongodb/schemas';
 
 export class CharacterBlueprintRepository
-  implements RepositoryContract<Character.Model>
+  implements ICharacterBlueprintRepository
 {
   public static tableName = 'character-blueprint';
   private readonly databaseAdapter: MongodbAdapter<Character.Model>;
 
   constructor(databaseAdapter: MongodbAdapter<Character.Model>) {
     this.databaseAdapter = databaseAdapter;
+  }
+
+  async get(params: Repository.ParamsGet): Promise<Character.Model> {
+    return await this.databaseAdapter.get(params);
   }
 
   async list(params: Repository.ParamsList = {}): Promise<Character.Model[]> {
@@ -30,7 +35,7 @@ export class CharacterBlueprintRepository
 export const makeCharacterBlueprintRepository =
   (): CharacterBlueprintRepository => {
     const mongoDbAdapter = new MongodbAdapter<Character.Model>(
-      characterBlueprintSchema,
+      characterSchema,
       CharacterBlueprintRepository.tableName,
     );
     return new CharacterBlueprintRepository(mongoDbAdapter);

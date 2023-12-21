@@ -1,9 +1,10 @@
-import { Repository, RepositoryContract } from '@domain/contracts';
+import { Repository } from '@domain/contracts';
+import { IUserRepository } from '@domain/interfaces';
 import { User } from '@domain/models';
 import { MongodbAdapter } from '@infra/adapters';
 import { userSchema } from '@infra/mongodb/schemas';
 
-export class UserRepository implements RepositoryContract<User> {
+export class UserRepository implements IUserRepository {
   public static tableName = 'user';
   private readonly databaseAdapter: MongodbAdapter<User>;
 

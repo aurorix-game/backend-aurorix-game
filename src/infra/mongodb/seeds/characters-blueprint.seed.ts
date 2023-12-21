@@ -1,10 +1,10 @@
-import { CHARACTER_ATTRIBUTE_ICONS } from '@domain/enums';
+import { CHARACTER_ATTRIBUTE_ICONS, InitialCharacters } from '@domain/enums';
 import { Character, TypeValues } from '@domain/models';
 
 export const charactersBlueprintsSeed: Character.Model[] = [
   {
     id: 'e862d225-06cc-4c84-9bc1-cbb1d324474a',
-    alias_name: 'blueprint-fire',
+    alias_name: InitialCharacters.Fire,
     sprite: {
       url: 'https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/fire-char-3x4.png',
       columns: 3,
@@ -61,7 +61,7 @@ export const charactersBlueprintsSeed: Character.Model[] = [
   },
   {
     id: '59ce3b6b-d672-4d6d-b0c7-c21a3db8405d',
-    alias_name: 'blueprint-water',
+    alias_name: InitialCharacters.Water,
     sprite: {
       url: 'https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/water-char-3x4.png',
       columns: 3,
@@ -118,7 +118,7 @@ export const charactersBlueprintsSeed: Character.Model[] = [
   },
   {
     id: '196eebb6-af62-4449-abd7-c02d1d35ddaa',
-    alias_name: 'blueprint-shadow',
+    alias_name: InitialCharacters.Shadow,
     sprite: {
       url: 'https://aurorix.s3.us-east-1.amazonaws.com/sprites/characters-initial/shadow-char-3x4.png',
       columns: 3,

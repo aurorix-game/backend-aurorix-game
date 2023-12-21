@@ -25,15 +25,17 @@ export namespace Character {
     ELEMENT_TUNNING_GRASS = 'Element Tunning - Grass',
   }
 
+  export type AttributeStyle = {
+    color: string;
+    icon: string;
+  };
+
   export type Attribute = {
     label: string;
     type: TypeAttributes;
     type_value: TypeValues;
     value: number;
-    style: {
-      color: string;
-      icon: string;
-    };
+    style: AttributeStyle;
   };
 
   export type Model = {
