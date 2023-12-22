@@ -1,8 +1,8 @@
 import { BcryptService, makeBcryptService } from '@application/services/crypto';
 import { IUserRepository } from '@domain/interfaces';
-import { User } from '@domain/models';
 import { BasicAuthLoginUseCase } from '@domain/use-cases';
 import { makeUserRepository } from '@infra/mongodb/repos';
+import { User } from 'aurorix-core';
 
 export class BasicAuthLoginService implements BasicAuthLoginUseCase {
   constructor(

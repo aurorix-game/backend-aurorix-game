@@ -1,8 +1,8 @@
 import { Repository } from '@domain/contracts';
 import { IUserCharacterRepository } from '@domain/interfaces/user-character.repository';
-import { UserCharacter } from '@domain/models';
 import { MongodbAdapter } from '@infra/adapters';
 import { userCharacterSchema } from '@infra/mongodb/schemas';
+import { UserCharacter } from 'aurorix-core';
 
 export class UserCharacterRepository implements IUserCharacterRepository {
   public static tableName = 'user-character';

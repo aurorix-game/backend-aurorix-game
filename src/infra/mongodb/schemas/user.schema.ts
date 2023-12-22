@@ -1,4 +1,4 @@
-import { User } from '@domain/models';
+import { User } from 'aurorix-core';
 import { HydratedDocument, Schema } from 'mongoose';
 import { v4 as uuid } from 'uuid';
 

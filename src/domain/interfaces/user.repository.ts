@@ -1,5 +1,5 @@
 import { Repository, RepositoryContract } from '@domain/contracts';
-import { User } from '@domain/models';
+import { User } from 'aurorix-core';
 
 export interface IUserRepository extends RepositoryContract<User> {
   get(params: Repository.ParamsGet): Promise<User>;

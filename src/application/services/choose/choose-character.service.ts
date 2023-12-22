@@ -1,6 +1,5 @@
 import { ICharacterBlueprintRepository } from '@domain/interfaces';
 import { IUserCharacterRepository } from '@domain/interfaces/user-character.repository';
-import { UserCharacter } from '@domain/models';
 import {
   ChooseCharactersParams,
   ChooseCharactersUseCase,
@@ -9,6 +8,7 @@ import {
   makeCharacterBlueprintRepository,
   makeUserCharacterRepository,
 } from '@infra/mongodb/repos';
+import { UserCharacter } from 'aurorix-core';
 import { v4 as uuid } from 'uuid';
 
 export class ChooseCharactersService implements ChooseCharactersUseCase {

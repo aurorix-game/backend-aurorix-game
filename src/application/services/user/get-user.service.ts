@@ -1,8 +1,8 @@
 import { Repository } from '@domain/contracts';
 import { IUserRepository } from '@domain/interfaces';
-import { User } from '@domain/models';
 import { GetUserUseCase } from '@domain/use-cases';
 import { makeUserRepository } from '@infra/mongodb/repos';
+import { User } from 'aurorix-core';
 
 export class GetUserService implements GetUserUseCase {
   constructor(private readonly userRepository: IUserRepository) {}

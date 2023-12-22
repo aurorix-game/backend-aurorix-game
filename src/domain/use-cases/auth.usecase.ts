@@ -1,5 +1,5 @@
 import { PayloadToken } from '@domain/contracts';
-import { User } from '@domain/models';
+import { User } from 'aurorix-core';
 
 export interface TokenUseCase {
   generate(params: PayloadToken): Promise<string>;

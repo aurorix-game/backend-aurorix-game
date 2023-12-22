@@ -1,8 +1,8 @@
 import { Repository } from '@domain/contracts';
 import { ICharacterBlueprintRepository } from '@domain/interfaces';
-import { Character } from '@domain/models';
 import { MongodbAdapter } from '@infra/adapters';
 import { characterSchema } from '@infra/mongodb/schemas';
+import { Character } from 'aurorix-core';
 
 export class CharacterBlueprintRepository
   implements ICharacterBlueprintRepository

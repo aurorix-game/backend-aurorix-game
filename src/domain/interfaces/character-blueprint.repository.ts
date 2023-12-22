@@ -1,5 +1,5 @@
 import { Repository, RepositoryContract } from '@domain/contracts';
-import { Character } from '@domain/models';
+import { Character } from 'aurorix-core';
 
 export interface ICharacterBlueprintRepository
   extends RepositoryContract<Character.Model> {

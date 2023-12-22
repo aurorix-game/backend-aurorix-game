@@ -1,4 +1,4 @@
-import { Character } from '@domain/models';
+import { Character } from 'aurorix-core';
 import { HydratedDocument, Schema } from 'mongoose';
 import { v4 as uuid } from 'uuid';
 
@@ -14,7 +14,6 @@ const styleAttributeCharacterSchema = new Schema<Character.AttributeStyle>({
 });
 
 const attributeCharacterSchema = new Schema<Character.Attribute>({
-  label: { type: 'string' },
   type: { type: 'string' },
   type_value: { type: 'string' },
   value: { type: 'number' },

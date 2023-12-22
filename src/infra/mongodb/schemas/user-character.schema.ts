@@ -1,4 +1,4 @@
-import { UserCharacter } from '@domain/models';
+import { UserCharacter } from 'aurorix-core';
 import { HydratedDocument, Schema } from 'mongoose';
 
 import { characterSchema } from './character.schema';

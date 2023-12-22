@@ -1,5 +1,5 @@
 import { Repository, RepositoryContract } from '@domain/contracts';
-import { UserCharacter } from '@domain/models';
+import { UserCharacter } from 'aurorix-core';
 
 export interface IUserCharacterRepository
   extends RepositoryContract<UserCharacter> {

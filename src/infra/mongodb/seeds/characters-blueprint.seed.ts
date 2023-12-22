@@ -1,5 +1,5 @@
-import { CHARACTER_ATTRIBUTE_ICONS, InitialCharacters } from '@domain/enums';
-import { Character, TypeValues } from '@domain/models';
+import { Character, TypeValues } from 'aurorix-core';
+import { CHARACTER_ATTRIBUTE_ICONS, InitialCharacters } from 'aurorix-core';
 
 export const charactersBlueprintsSeed: Character.Model[] = [
   {
@@ -12,7 +12,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     },
     attributes: [
       {
-        label: Character.TypeAttributesLabel.MOPY_CAPTURE,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.MOPY_CAPTURE,
         value: 500,
@@ -24,7 +23,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.EXPERTISE,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.EXPERTISE,
         value: 700,
@@ -34,7 +32,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_FIRE,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.ELEMENT_TUNNING_FIRE,
         value: 5500,
@@ -46,7 +43,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_GRASS,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.ELEMENT_TUNNING_GRASS,
         value: 700,
@@ -69,7 +65,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     },
     attributes: [
       {
-        label: Character.TypeAttributesLabel.MOPY_CAPTURE,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.MOPY_CAPTURE,
         value: 300,
@@ -81,7 +76,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.EXPERTISE,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.EXPERTISE,
         value: 800,
@@ -91,7 +85,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_WATER,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.ELEMENT_TUNNING_WATER,
         value: 6600,
@@ -103,7 +96,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_GRASS,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.ELEMENT_TUNNING_GRASS,
         value: 400,
@@ -126,7 +118,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
     },
     attributes: [
       {
-        label: Character.TypeAttributesLabel.MOPY_CAPTURE,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.MOPY_CAPTURE,
         value: 600,
@@ -138,7 +129,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.EXPERTISE,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.EXPERTISE,
         value: 400,
@@ -148,7 +138,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_SHADOW,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.ELEMENT_TUNNING_SHADOW,
         value: 3400,
@@ -160,7 +149,6 @@ export const charactersBlueprintsSeed: Character.Model[] = [
         },
       },
       {
-        label: Character.TypeAttributesLabel.ELEMENT_TUNNING_GRASS,
         type_value: TypeValues.PERCENTAGE,
         type: Character.TypeAttributes.ELEMENT_TUNNING_GRASS,
         value: 2400,

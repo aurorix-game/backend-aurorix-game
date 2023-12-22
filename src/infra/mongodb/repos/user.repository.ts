@@ -1,8 +1,8 @@
 import { Repository } from '@domain/contracts';
 import { IUserRepository } from '@domain/interfaces';
-import { User } from '@domain/models';
 import { MongodbAdapter } from '@infra/adapters';
 import { userSchema } from '@infra/mongodb/schemas';
+import { User } from 'aurorix-core';
 
 export class UserRepository implements IUserRepository {
   public static tableName = 'user';

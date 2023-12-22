@@ -1,4 +1,4 @@
-import { Character } from '@domain/models';
+import { Character } from 'aurorix-core';
 
 export const CHARACTER_ATTRIBUTE_ICONS = {
   [Character.TypeAttributes.MOPY_CAPTURE]:

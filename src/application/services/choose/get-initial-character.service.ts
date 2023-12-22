@@ -1,9 +1,9 @@
 import { Repository } from '@domain/contracts';
 import { ICharacterBlueprintRepository } from '@domain/interfaces';
-import { Character } from '@domain/models';
 import { GetInicialCharactersUseCase } from '@domain/use-cases';
 import { makeCharacterBlueprintRepository } from '@infra/mongodb/repos';
 import { charactersBlueprintsSeed } from '@infra/mongodb/seeds';
+import { Character } from 'aurorix-core';
 
 export class GetInicialCharactersService
   implements GetInicialCharactersUseCase

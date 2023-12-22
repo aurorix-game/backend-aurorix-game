@@ -1,7 +1,7 @@
 import { makeUser, makeUsers } from '@domain/fakers';
-import { User } from '@domain/models';
 import { MongodbAdapter } from '@infra/adapters';
 import { UserRepository } from '@infra/mongodb/repos';
+import { User } from 'aurorix-core';
 import { mock, MockProxy } from 'jest-mock-extended';
 
 describe(UserRepository, () => {

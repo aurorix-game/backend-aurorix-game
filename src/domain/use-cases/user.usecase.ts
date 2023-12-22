@@ -1,5 +1,5 @@
 import { Repository } from '@domain/contracts';
-import { User } from '@domain/models';
+import { User } from 'aurorix-core';
 
 export interface CreateUserUseCase {
   perform(user: User): Promise<User>;
