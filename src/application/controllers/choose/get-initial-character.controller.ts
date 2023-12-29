@@ -5,13 +5,14 @@ import {
 } from '@application/services/choose';
 import { ControllerContract } from '@domain/contracts';
 import { Http } from '@main/interfaces';
+import { Character } from 'aurorix-core';
 
 export class GetInitialCharacterController implements ControllerContract {
   constructor(
     private readonly getInicialCharacterService: GetInicialCharactersService,
   ) {}
 
-  async handle(): Promise<Http.Response> {
+  async handle(): Promise<Http.Response<Character.Model[]>> {
     try {
       const characters = await this.getInicialCharacterService.perform({});
 

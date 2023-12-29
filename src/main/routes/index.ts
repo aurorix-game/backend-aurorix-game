@@ -2,6 +2,7 @@ import { expressAdapter } from '@infra/adapters';
 import { logger } from '@main/config/logger';
 import { ResourceMapper } from '@main/interfaces';
 import { authRoutes } from '@main/routes/auth.routes';
+import { characterRoutes } from '@main/routes/character.routes';
 import { chooseRoutes } from '@main/routes/choose.routes';
 import { healthCheckRoutes } from '@main/routes/health-check.routes';
 import Table from 'cli-table';
@@ -21,6 +22,7 @@ export const mappingRoutes = (app: Express): void => {
   const resources: ResourceMapper[] = [
     ...authRoutes,
     ...chooseRoutes,
+    ...characterRoutes,
     ...healthCheckRoutes,
   ];
   const router = Router();

@@ -5,13 +5,14 @@ import {
 } from '@application/services/choose/choose-character.service';
 import { ControllerContract } from '@domain/contracts';
 import { Http } from '@main/interfaces';
+import { UserCharacter } from 'aurorix-core';
 
 export class ChooseCharacterController implements ControllerContract {
   constructor(
     private readonly chooseCharactersService: ChooseCharactersService,
   ) {}
 
-  async handle(request: Http.Request): Promise<Http.Response> {
+  async handle(request: Http.Request): Promise<Http.Response<UserCharacter>> {
     try {
       const userCharacter = await this.chooseCharactersService.perform({
         user_id: request.user.id,
