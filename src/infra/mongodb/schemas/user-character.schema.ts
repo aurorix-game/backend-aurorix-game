@@ -1,7 +1,6 @@
+import { characterSchema } from '@infra/mongodb/schemas';
 import { UserCharacter } from 'aurorix-core';
 import { HydratedDocument, Schema } from 'mongoose';
-
-import { characterSchema } from './character.schema';
 
 const userCharacterSchema = new Schema<UserCharacter>(
   {
@@ -21,6 +20,7 @@ const userCharacterSchema = new Schema<UserCharacter>(
 userCharacterSchema.set('toJSON', {
   virtuals: true,
   transform(_doc: HydratedDocument<unknown>, ret: Record<string, any>) {
+    delete ret.id;
     delete ret._id;
   },
 });
