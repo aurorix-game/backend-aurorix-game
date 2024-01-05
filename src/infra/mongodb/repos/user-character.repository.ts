@@ -1,5 +1,5 @@
 import { Repository } from '@domain/contracts';
-import { IUserCharacterRepository } from '@domain/interfaces/user-character.repository';
+import { IUserCharacterRepository } from '@domain/interfaces';
 import { MongodbAdapter } from '@infra/adapters';
 import { userCharacterSchema } from '@infra/mongodb/schemas';
 import { UserCharacter } from 'aurorix-core';

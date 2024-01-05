@@ -1,8 +1,12 @@
 import { Repository } from '@domain/contracts';
-import { Character, UserCharacter } from 'aurorix-core';
+import { Character, Mopy, UserCharacter } from 'aurorix-core';
 
 export interface GetInicialCharactersUseCase {
   perform(params: Repository.ParamsGet): Promise<Character.Model[]>;
+}
+
+export interface GetInicialMopysUseCase {
+  perform(params: Repository.ParamsGet): Promise<Mopy.Model[]>;
 }
 
 export interface ChooseCharactersParams {

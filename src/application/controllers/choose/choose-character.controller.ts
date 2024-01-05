@@ -2,7 +2,7 @@ import { AppError } from '@application/middlewares/errors';
 import {
   ChooseCharactersService,
   makeChooseCharactersService,
-} from '@application/services/choose/choose-character.service';
+} from '@application/services/choose';
 import { ControllerContract } from '@domain/contracts';
 import { Http } from '@main/interfaces';
 import { UserCharacter } from 'aurorix-core';
