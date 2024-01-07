@@ -1,14 +1,24 @@
 import { AppError } from '@application/middlewares/errors';
+import {
+  ChooseMopysService,
+  makeChooseMopyService,
+} from '@application/services/choose';
 import { ControllerContract } from '@domain/contracts';
 import { Http } from '@main/interfaces';
 
 export class ChooseMopyController implements ControllerContract {
-  constructor() {}
+  constructor(private readonly chooseMopysService: ChooseMopysService) {}
 
-  async handle(): Promise<Http.Response> {
+  async handle(request: Http.Request): Promise<Http.Response> {
     try {
+      const userMopy = await this.chooseMopysService.perform({
+        user_id: request.user.id,
+        alias_name_blueprint: request.body.alias_name_blueprint,
+      });
+
       return {
-        statusCode: Http.StatusCode.OK,
+        statusCode: Http.StatusCode.CREATED,
+        data: userMopy,
       };
     } catch (e: any) {
       throw new AppError({
@@ -23,5 +33,5 @@ export class ChooseMopyController implements ControllerContract {
 
 /* istanbul ignore next */
 export const makeChooseMopyController = (): ChooseMopyController => {
-  return new ChooseMopyController();
+  return new ChooseMopyController(makeChooseMopyService());
 };

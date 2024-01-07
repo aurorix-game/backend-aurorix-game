@@ -4,7 +4,10 @@ import {
   makeGetInitialCharacterController,
   makeGetInitialMopyController,
 } from '@application/controllers/choose';
-import { chooseCharacterValidator } from '@application/controllers/choose/validators';
+import {
+  chooseCharacterValidator,
+  chooseMopyValidator,
+} from '@application/controllers/choose/validators';
 import {
   makeAuthMiddleware,
   makeContextUserMiddleware,
@@ -35,6 +38,7 @@ const chooseRoutes: ResourceMapper[] = [
     endPoint: '/choose/mopy/initial',
     method: Http.Methods.post,
     controller: makeChooseMopyController(),
+    validators: [chooseMopyValidator],
     middlewares: [makeAuthMiddleware(), makeContextUserMiddleware()],
   },
 ];

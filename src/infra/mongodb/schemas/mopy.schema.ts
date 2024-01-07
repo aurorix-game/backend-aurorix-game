@@ -27,7 +27,7 @@ const mopySchema = new Schema<Mopy.Model>(
       },
       health: {
         max_value: { type: 'number' },
-        value: { type: 'number' },
+        current_value: { type: 'number' },
         type_value: { type: 'string' },
       },
       attack: {
@@ -41,7 +41,7 @@ const mopySchema = new Schema<Mopy.Model>(
       elements: [{ type: String }],
       xp: {
         max_value: { type: 'number' },
-        value: { type: 'number' },
+        current_value: { type: 'number' },
         type_value: { type: 'string' },
       },
     },
