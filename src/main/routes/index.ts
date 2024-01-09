@@ -5,6 +5,7 @@ import { authRoutes } from '@main/routes/auth.routes';
 import { characterRoutes } from '@main/routes/character.routes';
 import { chooseRoutes } from '@main/routes/choose.routes';
 import { healthCheckRoutes } from '@main/routes/health-check.routes';
+import { mopyRoutes } from '@main/routes/mopy.routes';
 import Table from 'cli-table';
 import { Express, Router } from 'express';
 
@@ -23,6 +24,7 @@ export const mappingRoutes = (app: Express): void => {
     ...authRoutes,
     ...chooseRoutes,
     ...characterRoutes,
+    ...mopyRoutes,
     ...healthCheckRoutes,
   ];
   const router = Router();
