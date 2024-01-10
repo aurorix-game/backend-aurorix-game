@@ -8,17 +8,24 @@ const spriteCharacter = new Schema<Character.Sprite>({
   rows: { type: 'number' },
 });
 
-const styleAttributeCharacterSchema = new Schema<Character.AttributeStyle>({
-  color: { type: 'string' },
-  icon: { type: 'string' },
-});
-
-const attributeCharacterSchema = new Schema<Character.Attribute>({
+const mopyCaptureAttributeSchema = new Schema<Character.MopyCaptureAttribute>({
   type: { type: 'string' },
   type_value: { type: 'string' },
   value: { type: 'number' },
-  style: styleAttributeCharacterSchema,
 });
+
+const expertiseAttributeSchema = new Schema<Character.ExpertiseAttribute>({
+  type: { type: 'string' },
+  type_value: { type: 'string' },
+  value: { type: 'number' },
+});
+
+const elementTunningAttributeSchema =
+  new Schema<Character.ElementTunningAttribute>({
+    type: { type: 'string' },
+    type_value: { type: 'string' },
+    value: { type: 'number' },
+  });
 
 const characterSchema = new Schema<Character.Model>(
   {
@@ -35,7 +42,11 @@ const characterSchema = new Schema<Character.Model>(
       index: 'hashed',
     },
     sprite: spriteCharacter,
-    attributes: [attributeCharacterSchema],
+    att: {
+      mopy_capture: mopyCaptureAttributeSchema,
+      expertise: expertiseAttributeSchema,
+    },
+    element_tunning: [elementTunningAttributeSchema],
   },
   { versionKey: false },
 );
@@ -46,9 +57,11 @@ characterSchema.set('toJSON', {
     delete ret._id;
     delete ret.sprite._id;
 
-    (ret as Character.Model)?.attributes?.forEach((att: any) => {
+    delete ret?.att?.mopy_capture?._id;
+    delete ret?.att?.expertise?._id;
+
+    (ret as Character.Model)?.element_tunning?.forEach((att: any) => {
       delete att._id;
-      delete att.style._id;
     });
   },
 });

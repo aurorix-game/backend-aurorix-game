@@ -1,7 +1,7 @@
 import { AppError } from '@application/middlewares/errors';
 import { ValidatorContract } from '@domain/contracts';
-import { INITIAL_CHARACTERS } from '@domain/enums';
 import { Http } from '@main/interfaces';
+import { INITIAL_CHARACTERS } from 'aurorix-core';
 import * as Yup from 'yup';
 
 const body = Yup.object().shape({
